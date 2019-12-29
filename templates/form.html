@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Add Transaction</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/form" method="post">
+    
+        <!-- Date -->
+        <div class="form-group row">
+            <label for="date" class="col-sm-2 col-form-label">Date</label>
+            <div class="col-sm-5">
+                <input type="date" class="form-control" name="date" id="date" placeholder="Date">
+            </div>
+        </div>
+        
+        <!-- Type -->
+        <!-- Later on, populate from category types instead of hard-coding -->
+        <div class="form-group row">
+            <label for="type" class="col-sm-2 col-form-label">Type</label>
+            <div class="col-sm-5">
+                <select class="form-control" name="type" id="type">
+                    <option selected value="Expense">Expense</option>
+                    <option value="Income">Income</option>
+                    <option value="Transfer">Transfer</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Category -->
+        <div class="form-group row">
+            <label for="category" class="col-sm-2 col-form-label">Category</label>
+            <div class="col-sm-5">
+                <select class="form-control" name="category" id="category">
+                </select>
+            </div>
+        </div>
+        
+        <!-- Account -->
+        <div class="form-group row">
+            <label for="account1" class="col-sm-2 col-form-label">Account</label>
+            <div class="col-sm-5">
+                <select class="form-control" name="account1" id="account1">
+                </select>
+            </div>
+        </div>
+        
+        <!-- Amount -->
+        <div class="form-group row">
+            <label for="amount1" class="col-sm-2 col-form-label">Amount</label>
+            <div class="col-sm-5">
+                <input type="number" name="amount1" id="amount1" placeholder="0.00">
+            </div>
+        </div>
+        
+        <!-- Description -->
+        <div class="form-group row">
+            <label for="description" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-5">
+                <input type="text" name="description" id="description" placeholder="Description">
+            </div>
+        </div>
+        
+        <!-- Submit Button -->
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button class="btn btn-primary" id="submit-button" type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+
+<!--
+    <script>
+        $(document).ready(function() {
+            $("form").submit(function(e) {
+                if ($('#name').val() == '') {
+                    errormsg('Name', e);
+                }
+                if ($('#email').val() == '') {
+                    errormsg('Email', e);
+                }
+                if ($('#major').children('option:selected').val() == '') {
+                    errormsg('Major', e);
+                }
+
+                var years = [on($('#fr')), on($('#so')), on($('#jr')), on($('#sr')), on($('#ot'))]
+                var days = [on($('#mon')), on($('#tue')), on($('#wed')), on($('#thu')), on($('#fri'))]
+
+                if (allfalse(years)) {
+                    errormsg('Year', e);
+                }
+                if (allfalse(days)) {
+                    errormsg('At least one day of availability', e);
+                }
+            });
+        });
+
+        function allfalse(array) {
+            for (var i = 0; i < array.length; i++) {
+                if (array[i]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function on(box) {
+            return box.is(':checked')
+        }
+
+        function errormsg(text, e) {
+            alert(text + ' is required, dude.');
+            e.preventDefault();
+            return process.abort();
+        }
+    </script>
+    
+ -->
+</html>
